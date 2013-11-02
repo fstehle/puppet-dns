@@ -17,6 +17,7 @@
 #
 define dns::server::options  (
   $forwarders = [],
+  $allow_query = [],
 ) {
   
   include dns::server::params
