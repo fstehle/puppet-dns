@@ -13,6 +13,7 @@ define dns::zone (
   $allow_transfer = [],
   $slave_masters = undef,
   $zone_notify = false,
+  $zone_also_notify = [],
   $ensure = present
 ) {
 

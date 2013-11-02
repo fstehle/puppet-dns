@@ -3,6 +3,13 @@ zone "<%= @zone %>" {
 <% if @zone_notify -%>
   notify <%= @zone_notify %>;
 <% end -%>
+<% if @zone_also_notify.size > 0 then -%>
+  also-notify {
+<% @zone_also_notify.each do |ip| -%>
+    <%= ip %>;
+<% end -%>
+  };
+<% end -%>
   file "<%= @zone_file %>";
 <% if @zone_type == 'slave' -%>
   masters { <%= @slave_masters %>;};
